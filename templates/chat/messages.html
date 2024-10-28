@@ -1,0 +1,24 @@
+<ul class="unique-message-container list-group list-group-flush">
+
+    {% if not object %}
+    <div class="content">
+        <p class="text-center">Selecione uma sala de bate papo</p>
+    </div>
+    {% else %}
+
+    <h1>{{ object.title }}</h1>
+
+    {% if object.messages.count > 0 %}
+    {% for message in object.messages.all %}
+
+    {% include 'chat/message.html' %}
+
+    {% endfor %}
+    {% else %}
+    <div class="content">
+        <p class="text-center">Nenhuma mensagem enviada ainda...</p>
+    </div>
+    {% endif %}
+    {% endif %}
+
+</ul>

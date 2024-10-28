@@ -1,0 +1,3 @@
+{% for room in rooms %}
+<li role="button" id="room-{{room.id}}" class="list-group-item" onclick="getMessages('{{room.id}}')">{{room.title}}</li>
+{% endfor %}
